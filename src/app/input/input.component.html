@@ -5,7 +5,14 @@
         Please fill in the field
     </div>
     <div *ngIf="control.errors?.['minlength']" class="invalid-feedback">
-        The value you entered is {{ control.errors?.['actuallength'] }} characters long
+        The value you entered is {{ control.errors?.['minlength'].actualLength }} characters long
         It must be atleast {{ control.errors?.['minlength'].requiredLength }} characters long
+    </div>
+    <div *ngIf="control.errors?.['maxlength']" class="invalid-feedback">
+        The value you entered is {{ control.errors?.['maxlength'].actualLength }} characters long
+        It can't be longer than {{ control.errors?.['maxlength'].requiredLength }} characters long
+    </div>
+    <div *ngIf="control.errors?.['pattern']" class="invalid-feedback">
+        Invalid Format
     </div>
 </ng-container>
