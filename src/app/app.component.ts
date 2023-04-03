@@ -11,6 +11,13 @@ export class AppComponent {
     name: new FormControl('', [
       Validators.required,
       Validators.minLength(3)
-    ])
+    ]),
+    num: new FormControl(''),
+    expiration: new FormControl(''),
+    cvv: new FormControl('')
   })
+
+  submit() {
+    console.log('Form Submitted')
+  }
 }

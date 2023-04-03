@@ -1,11 +1,11 @@
 <input type="text" class="form-control" [formControl]="control"
-    [ngClass]="{ 'is-invalid': control.dirty && control.touched && control.errors}">
-<ng-container *ngIf="control.dirty && control.touched && control.errors">
+    [ngClass]="{ 'is-invalid': showMsg()}">
+<ng-container *ngIf="showMsg()">
     <div *ngIf="control.errors?.['required']" class="invalid-feedback">
         Please fill in the field
     </div>
     <div *ngIf="control.errors?.['minlength']" class="invalid-feedback">
-        The value you entered is {{ control.errors['minlength'].actualLength }} characters long
-        It must be atleast {{ control.errors['minlength'].requiredLength }} characters long
+        The value you entered is {{ control.errors?.['actuallength'] }} characters long
+        It must be atleast {{ control.errors?.['minlength'].requiredLength }} characters long
     </div>
 </ng-container>
